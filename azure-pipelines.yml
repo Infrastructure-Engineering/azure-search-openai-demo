@@ -31,9 +31,8 @@ steps:
 - script: |
     #!/bin/bash
 
-    export BROWSER=/usr/bin/firefox
-    export DISPLAY=:0
+    export BROWSER="/usr/bin/firefox"
 
     echo "Login to Azure"
-    azd auth login
+    azd auth login --use-device-code
   displayName: 'Set up project'
