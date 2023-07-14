@@ -36,4 +36,11 @@ steps:
 
     echo "Initialize Project"
      yes "Overwrite with versions from template" | azd init --subscription ec79f31d-9166-44f3-ae41-b45024f7492a -l eastus -t azure-search-openai-demo -e prod
-  displayName: 'Set up project'
+  displayName: 'Initialize project'
+
+  - script: |
+    #!/bin/bash
+
+    echo "Deploy Project"
+    azd up
+  displayName: 'Deploy Project'
