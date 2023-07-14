@@ -25,12 +25,8 @@ steps:
 
     echo "Install nodejs"
     sudo apt install nodejs -y
-    sudo apt install npm -y  
-  displayName: 'Install dependencies'
-
-- script: |
-    #!/bin/bash
+    sudo apt install npm -y
 
     echo "Login to Azure"
-    azd auth login
-  displayName: 'Set up project'
+    azd auth login  
+  displayName: 'Install dependencies'
