@@ -35,5 +35,5 @@ steps:
     az login --use-device-code
 
     echo "Initialize Project"
-    yes "" | azd init --subscription ec79f31d-9166-44f3-ae41-b45024f7492a -l eastus -t azure-search-openai-demo
+     yes "Overwrite with versions from template" | azd init --subscription ec79f31d-9166-44f3-ae41-b45024f7492a -l eastus -t azure-search-openai-demo -e prod
   displayName: 'Set up project'
