@@ -35,5 +35,5 @@ steps:
     az login --use-device-code
 
     echo "Initialize Project"
-    azd init -t azure-search-openai-demo
+    azd init --subscription ec79f31d-9166-44f3-ae41-b45024f7492a -l eastus -t azure-search-openai-demo --no-prompt
   displayName: 'Set up project'
