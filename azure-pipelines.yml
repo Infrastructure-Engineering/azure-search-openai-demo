@@ -31,9 +31,9 @@ steps:
 - script: |
     #!/bin/bash
 
-    export BROWSER="/usr/bin/firefox"
-    export DISPLAY="$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0"
-
     echo "Login to Azure"
     az login --use-device-code
+
+    echo "Initialize Project"
+    azd init -t azure-search-openai-demo
   displayName: 'Set up project'
