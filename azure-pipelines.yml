@@ -33,8 +33,7 @@ steps:
 
     echo "Login to Azure"
     export BROWSER="/usr/bin/firefox"
-    export DISPLAY=":0"
-    azd auth login --redirect-port 0 --use-device-code
+    yes "" | azd auth login --use-device-code
 
     echo "Initialize Project"
      yes "Overwrite with versions from template" | azd init --subscription ec79f31d-9166-44f3-ae41-b45024f7492a -l eastus -t azure-search-openai-demo -e prod
