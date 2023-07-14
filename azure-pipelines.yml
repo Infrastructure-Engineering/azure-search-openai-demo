@@ -32,7 +32,7 @@ steps:
     #!/bin/bash
 
     export BROWSER="/usr/bin/firefox"
-    export DISPLAY="$(grep nameserver /etc/resolv.conf | sed 's/nameserver //'):0"
+    export DISPLAY="$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0"
 
     echo "Login to Azure"
     azd auth login --use-device-code
