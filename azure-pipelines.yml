@@ -10,10 +10,20 @@ steps:
 - script: |
     #!/bin/bash
 
+    echo "Update apt repositories"
+    sudo apt update -y
+
     echo "Install azd"
     curl -fsSL https://aka.ms/install-azd.sh | bash
 
+    echo "Install Python3"
+    sudo apt install python3 -y
+    sudo apt install python-is-python3 -y
+
+    echo "Install git"
+    sudo apt install git -y
+
     echo "Install nodejs"
     sudo apt install nodejs -y
-    sudo apt install npm -y
+    sudo apt install npm -y  
   displayName: 'Install dependencies'
