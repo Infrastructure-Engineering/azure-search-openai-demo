@@ -31,7 +31,7 @@ steps:
 - script: |
     #!/bin/bash
 
-    export BROWSER="/usr/bin/firefox"
+    export BROWSER="explorer.exe"
 
     echo "Login to Azure"
     azd auth login --use-device-code
