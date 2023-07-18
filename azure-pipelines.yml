@@ -6,6 +6,31 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- name: AZURE_OPENAI_SERVICE
+  value: ahc-prod-openai-svc
+
+- name: AZURE_OPENAI_RESOURCE_GROUP
+  value: ahc-prod-openai-rg
+
+- name: AZURE_FORMRECOGNIZER_SERVICE
+  value: ahc-prod-openai-form
+
+- name: AZURE_FORMRECOGNIZER_RESOURCE_GROUP
+  value: ahc-prod-openai-rg
+
+- name: AZURE_SEARCH_SERVICE
+  value: ahc-prod-openai-search
+
+- name: AZURE_SEARCH_SERVICE_RESOURCE_GROUP
+  value: ahc-prod-openai-rg
+
+- name: AZURE_STORAGE_ACCOUNT
+  value: ahc-prod-openai-storage
+
+- name: AZURE_STORAGE_RESOURCE_GROUP
+  value: ahc-prod-openai-rg
+
 steps:
 - script: |
     #!/bin/bash
@@ -41,6 +66,16 @@ steps:
 
 - script: |
     #!/bin/bash
+
+    echo "Setup project env variables"
+    azd env set AZURE_OPENAI_SERVICE {{ variables.AZURE_OPENAI_SERVICE }}
+    azd env set AZURE_OPENAI_RESOURCE_GROUP {{ variables.AZURE_OPENAI_RESOURCE_GROUP }}
+    azd env set AZURE_FORMRECOGNIZER_SERVICE {{ variables.AZURE_FORMRECOGNIZER_SERVICE }}
+    azd env set AZURE_FORMRECOGNIZER_RESOURCE_GROUP {{ variables.AZURE_FORMRECOGNIZER_RESOURCE_GROUP }}
+    azd env set AZURE_SEARCH_SERVICE {{ variables.AZURE_SEARCH_SERVICE }}
+    azd env set AZURE_SEARCH_SERVICE_RESOURCE_GROUP {{ variables.AZURE_SEARCH_SERVICE_RESOURCE_GROUP }}
+    azd env set AZURE_STORAGE_ACCOUNT {{ variables.AZURE_STORAGE_ACCOUNT }}
+    azd env set AZURE_STORAGE_RESOURCE_GROUP {{ variables.AZURE_STORAGE_RESOURCE_GROUP }}
 
     echo "Deploy Project"
     azd up
