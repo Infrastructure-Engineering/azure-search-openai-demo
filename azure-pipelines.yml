@@ -78,5 +78,5 @@ steps:
     azd env set AZURE_STORAGE_RESOURCE_GROUP ${{ variables.AZURE_STORAGE_RESOURCE_GROUP }}
 
     echo "Deploy Project"
-    yes "(US) East US (eastus)" | azd up
+    yes "eastus" | azd up
   displayName: 'Deploy Project'
