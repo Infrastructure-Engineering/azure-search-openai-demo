@@ -78,5 +78,5 @@ steps:
     azd env set AZURE_STORAGE_RESOURCE_GROUP ${{ variables.AZURE_STORAGE_RESOURCE_GROUP }}
 
     echo "Deploy Project"
-    yes "eastus" | azd up
+    yes "" | azd up
   displayName: 'Deploy Project'
