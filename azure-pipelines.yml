@@ -7,6 +7,18 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
+- name: AZURE_SUBSCRIPTION_ID
+  value: ec79f31d-9166-44f3-ae41-b45024f7492a
+
+- name: AZURE_TEMPLATE_NAME
+  value: azure-search-openai-prod
+
+- name: AZURE_ENV_NAME
+  value: prod
+
+- name: AZURE_LOCATION
+  value: eastus
+
 - name: AZURE_OPENAI_SERVICE
   value: ahc-prod-openai-svc
 
@@ -61,7 +73,7 @@ steps:
     yes "" | azd auth login --use-device-code
 
     echo "Initialize Project"
-     yes "Overwrite with versions from template" | azd init --subscription ec79f31d-9166-44f3-ae41-b45024f7492a -l eastus -t azure-search-openai-demo -e prod
+     yes "Overwrite with versions from template" | azd init --subscription ${{ variables.AZURE_SUBSCRIPTION_ID }} -l ${{ variables.AZURE_LOCATION }} -t ${{ variables.AZURE_TEMPLATE_NAME }} -e ${{ variables.AZURE_ENV_NAME }}
   displayName: 'Initialize project'
 
 - script: |
@@ -78,5 +90,5 @@ steps:
     azd env set AZURE_STORAGE_RESOURCE_GROUP ${{ variables.AZURE_STORAGE_RESOURCE_GROUP }}
 
     echo "Deploy Project"
-    yes "East US" | azd up
+    yes '' | azd up
   displayName: 'Deploy Project'
