@@ -73,7 +73,7 @@ steps:
     yes "" | azd auth login --use-device-code
 
     echo "Initialize Project"
-     yes "y" | azd init --subscription ${{ variables.AZURE_SUBSCRIPTION_ID }} -l ${{ variables.AZURE_LOCATION }} -t ${{ variables.AZURE_TEMPLATE_NAME }} -e ${{ variables.AZURE_ENV_NAME }}
+     yes "Overwrite with versions from template" | yes "y" | azd init --subscription ${{ variables.AZURE_SUBSCRIPTION_ID }} -l ${{ variables.AZURE_LOCATION }} -t ${{ variables.AZURE_TEMPLATE_NAME }} -e ${{ variables.AZURE_ENV_NAME }}
   displayName: 'Initialize project'
 
 - script: |
