@@ -11,7 +11,7 @@ variables:
   value: ec79f31d-9166-44f3-ae41-b45024f7492a
 
 - name: AZURE_TEMPLATE_NAME
-  value: azure-search-openai-prod
+  value: azure-search-openai-demo
 
 - name: AZURE_ENV_NAME
   value: prod
