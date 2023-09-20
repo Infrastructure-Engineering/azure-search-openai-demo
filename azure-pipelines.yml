@@ -81,6 +81,7 @@ steps:
 
     echo "Setup project env variables"
     azd env set AZURE_LOCATION ${{ variables.AZURE_LOCATION }}
+    azd env set AZURE_ENV_NAME ${{ variables.AZURE_ENV_NAME }}
     azd env set AZURE_OPENAI_SERVICE ${{ variables.AZURE_OPENAI_SERVICE }}
     azd env set AZURE_OPENAI_RESOURCE_GROUP ${{ variables.AZURE_OPENAI_RESOURCE_GROUP }}
     azd env set AZURE_FORMRECOGNIZER_SERVICE ${{ variables.AZURE_FORMRECOGNIZER_SERVICE }}
